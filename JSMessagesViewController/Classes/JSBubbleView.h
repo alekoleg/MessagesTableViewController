@@ -47,6 +47,11 @@
  */
 @property (strong, nonatomic) UIFont *font UI_APPEARANCE_SELECTOR;
 
+/**
+ * The max width of the bubleView. The default value is [UIScreen mainScreen].applicationFrame.size.width * 0.7
+ */
+@property (strong, nonatomic) NSNumber * maxWidth UI_APPEARANCE_SELECTOR;
+
 #pragma mark - Initialization
 
 /**

@@ -119,6 +119,8 @@
     [super viewDidLoad];
     [self setup];
     [[JSBubbleView appearance] setFont:[UIFont systemFontOfSize:16.0f]];
+    float maxWidth = [UIScreen mainScreen].applicationFrame.size.width * 0.70f;
+    [[JSBubbleView appearance] setMaxWidth:@(maxWidth)];
 }
 
 - (void)viewWillAppear:(BOOL)animated
