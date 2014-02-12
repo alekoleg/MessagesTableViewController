@@ -475,34 +475,34 @@
 
 - (void)keyboardWillShowHide:(NSNotification *)notification
 {
-    CGRect keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-	UIViewAnimationCurve curve = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
-	double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView animateWithDuration:duration
-                          delay:0.0
-                        options:[self animationOptionsForCurve:curve]
-                     animations:^{
-                         CGFloat keyboardY = [self.view convertRect:keyboardRect fromView:nil].origin.y;
-                         
-                         CGRect inputViewFrame = self.messageInputView.frame;
-                         CGFloat inputViewFrameY = keyboardY - inputViewFrame.size.height;
-                         
-                         // for ipad modal form presentations
-                         CGFloat messageViewFrameBottom = self.view.frame.size.height - inputViewFrame.size.height;
-                         if (inputViewFrameY > messageViewFrameBottom)
-                             inputViewFrameY = messageViewFrameBottom;
-						 
-                         self.messageInputView.frame = CGRectMake(inputViewFrame.origin.x,
-																  inputViewFrameY,
-																  inputViewFrame.size.width,
-																  inputViewFrame.size.height);
-
-                         [self setTableViewInsetsWithBottomValue:self.view.frame.size.height
-                                                                - self.messageInputView.frame.origin.y
-                                                                - inputViewFrame.size.height];
-                     }
-                     completion:nil];
+//    CGRect keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//	UIViewAnimationCurve curve = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+//	double duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+//    
+//    [UIView animateWithDuration:duration
+//                          delay:0.0
+//                        options:[self animationOptionsForCurve:curve]
+//                     animations:^{
+//                         CGFloat keyboardY = [self.view convertRect:keyboardRect fromView:nil].origin.y;
+//                         
+//                         CGRect inputViewFrame = self.messageInputView.frame;
+//                         CGFloat inputViewFrameY = keyboardY - inputViewFrame.size.height;
+//                         
+//                         // for ipad modal form presentations
+//                         CGFloat messageViewFrameBottom = self.view.frame.size.height - inputViewFrame.size.height;
+//                         if (inputViewFrameY > messageViewFrameBottom)
+//                             inputViewFrameY = messageViewFrameBottom;
+//						 
+//                         self.messageInputView.frame = CGRectMake(inputViewFrame.origin.x,
+//																  inputViewFrameY,
+//																  inputViewFrame.size.width,
+//																  inputViewFrame.size.height);
+//
+//                         [self setTableViewInsetsWithBottomValue:self.view.frame.size.height
+//                                                                - self.messageInputView.frame.origin.y
+//                                                                - inputViewFrame.size.height];
+//                     }
+//                     completion:nil];
 }
 
 #pragma mark - Dismissive text view delegate
